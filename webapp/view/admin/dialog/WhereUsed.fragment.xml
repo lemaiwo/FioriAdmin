@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
+	<Dialog showHeader="true">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="Progress" level="H2"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://decline" press=".closeDialog"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<ProgressIndicator class="sapUiSmallMarginBottom" percentValue="{= ${admin>/progress/done} / ${admin>/progress/todo} * 100 }"
+				displayValue="{admin>/progress/done} / {admin>/progress/todo}" showValue="true" state="Information" displayOnly="true"/>
+			<l:Grid content="{admin>/copyResult}" hSpacing="2" defaultSpan="L12 M12 S12">
+				<l:content>
+					<Panel headerText="{admin>name} - {admin>tileType/name} ( {admin>semanticObject} - {admin>semanticObject} - {admin>semanticAction} )"
+						expandable="true" expanded="true" width="auto" backgroundDesign="Translucent">
+						<t:Table id="tableCatalogs" rows="{admin>catalogs}" selectionMode="None" visibleRowCount="3">
+							<t:columns>
+								<!--<t:Column>-->
+								<!--	<Label text="Name"/>-->
+								<!--	<t:template>-->
+								<!--		<Text text="{admin>name}"/>-->
+								<!--	</t:template>-->
+								<!--</t:Column>-->
+								<t:Column>
+									<Label text="Catalogid"/>
+									<t:template>
+										<Text text="{admin>pageId}"/>
+									</t:template>
+								</t:Column>
+							</t:columns>
+						</t:Table>
+						<t:Table id="tableGroups" rows="{admin>groups}" selectionMode="None" visibleRowCount="3">
+							<t:columns>
+								<t:Column>
+									<Label text="Name"/>
+									<t:template>
+										<Text text="{admin>name}"/>
+									</t:template>
+								</t:Column>
+								<!--<t:Column>-->
+								<!--	<Label text="Catalogid"/>-->
+								<!--	<t:template>-->
+								<!--		<Text text="{admin>catalogId}"/>-->
+								<!--	</t:template>-->
+								<!--</t:Column>-->
+								<!--<t:Column>-->
+								<!--	<Label text="Instance ID"/>-->
+								<!--	<t:template>-->
+								<!--		<Text text="{admin>instanceId}"/>-->
+								<!--	</t:template>-->
+								<!--</t:Column>-->
+							</t:columns>
+						</t:Table>
+					</Panel>
+				</l:content>
+			</l:Grid>
+		</content>
+		<buttons></buttons>
+	</Dialog>
+</core:FragmentDefinition>

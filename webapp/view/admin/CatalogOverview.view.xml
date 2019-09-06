@@ -1,0 +1,79 @@
+<mvc:View controllerName="be.elia.fio.FioriAdmin.controller.admin.CatalogOverview" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:t="sap.ui.table">
+	<Page title="Fiori Admin" class="sapUiContentPadding">
+		<headerContent></headerContent>
+		<subHeader>
+			<Toolbar>
+				<Select forceSelection="false" selectedKey="{admin>/pageType}">
+					<core:Item key="CATALOG" text="Catalog"/>
+					<core:Item key="GROUP" text="Group"/>
+				</Select>
+				<Input value="{admin>/groupName}" visible="{= ${admin>/pageType} === 'GROUP'}" change=".getPage" width="100%" showValueHelp="true"
+					showSuggestion="true" valueHelpRequest=".handleGroupValueHelp"
+					suggestionItems="{path:'builder>/Pages',filters:[{path: 'catalogId', operator: 'EQ', value1: '/UI2/FLPD_CATALOG'}]}">
+					<suggestionItems>
+						<core:Item text="{builder>id}"/>
+					</suggestionItems>
+				</Input>
+				<Input value="{admin>/catalogName}" visible="{= ${admin>/pageType} === 'CATALOG'}" change=".getPage" width="100%" showValueHelp="true"
+					showSuggestion="true" valueHelpRequest=".handleCatalogValueHelp"
+					suggestionItems="{path:'builder>/Catalogs',filters:{filters:[{path: 'type', operator: 'EQ', value1: 'CATALOG_PAGE'},{path: 'type', operator: 'EQ', value1: 'H'},{path: 'type', operator: 'EQ', value1: 'REMOTE'}],and:false}}">
+					<suggestionItems>
+						<core:Item text="{builder>domainId}"/>
+					</suggestionItems>
+				</Input>
+				<Button text="Load..." press=".getPage"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<t:Table id="table" rows="{path:'admin>/page/chips'}" busy="{admin>/tableLoading}" selectionMode="MultiToggle" visibleRowCountMode="Auto"
+				rowSelectionChange=".onTableSelectionChanged" enableCellFilter="true" enableSelectAll="false" filter=".onFilter">
+				<t:extension>
+					<Toolbar>
+						<Title
+							text="{admin>/page/pageId} - Tiles {admin>/page/tiles} {= ${admin>/page/type} === 'CATALOG'? '- Target Mappings' + ${admin>/page/targetmappings} + '- Total '+${admin>/page/total} : ''}"/>
+						<ToolbarSpacer/>
+						<Button text="Where Used" press=".onWhereUsed" enabled="{= !${admin>/tableLoading} }" visible="{= ${admin>/page/type} === 'CATALOG'}"/>
+						<Button text="Copy" press=".onStartCopy" enabled="{= !${admin>/tableLoading} }" visible="{= ${admin>/page/type} === 'CATALOG'}"/>
+						<Button text="Assign to group" press=".onStartAssign" enabled="{= !${admin>/tableLoading} }" visible="{= ${admin>/page/type} === 'CATALOG'}"/>
+						<Button text="Delete" enabled="{= !${admin>/tableLoading} }" press=".onDelete"/>
+					</Toolbar>
+				</t:extension>
+				<!--<t:rowSettingsTemplate>-->
+				<!--	<t:RowSettings highlight="{Status}"/>-->
+				<!--</t:rowSettingsTemplate>-->
+				<t:columns>
+					<t:Column sortProperty="name">
+						<Label text="Title"/>
+						<t:template>
+							<Text text="{admin>name}"/>
+						</t:template>
+					</t:Column>
+					<t:Column filterProperty="semanticObject" filterOperator="Contains" sortProperty="semanticObject">
+						<Label text="Semantic Object"/>
+						<t:template>
+							<Text text="{admin>semanticObject}"/>
+						</t:template>
+					</t:Column>
+					<t:Column filterProperty="semanticAction" filterOperator="Contains" sortProperty="semanticAction">
+						<Label text="Semantic Action"/>
+						<t:template>
+							<Text text="{admin>semanticAction}"/>
+						</t:template>
+					</t:Column>
+					<t:Column id="type" filterProperty="tileType/name" filterOperator="Contains" sortProperty="tileType/name">
+						<Label text="Type"/>
+						<t:template>
+							<Text text="{admin>tileType/name}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</content>
+		<footer>
+			<!--<Toolbar>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--</Toolbar>-->
+		</footer>
+	</Page>
+</mvc:View>

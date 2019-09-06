@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Groups" class="sapUiPopupWithPadding"
+		items="{path:'builder>/Pages',filters:[{path: 'catalogId', operator: 'EQ', value1: '/UI2/FLPD_CATALOG'}]}" search="_handleValueHelpSearch"
+		confirm=".confirmDialog" cancel=".closeDialog" rememberSelections="true">
+		<StandardListItem title="{builder>title}" description="{builder>id}"/>
+	</SelectDialog>
+</core:FragmentDefinition>
