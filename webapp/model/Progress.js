@@ -3,7 +3,7 @@ sap.ui.define([
 	"./TileType"
 ], function (ManagedObect, TileType) {
 	"use strict";
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.model.Progress', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.model.Progress', {
 		metadata: {
 			properties: {
 				todo: "int",

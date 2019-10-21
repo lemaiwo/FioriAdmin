@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (CoreService, ODataUtils, Filter, FilterOperator) {
 	"use strict";
 
-	var CatalogService = CoreService.extend("be.elia.fio.FioriAdmin.service.CatalogService", {
+	var CatalogService = CoreService.extend("be.wl.fio.FioriAdmin.service.CatalogService", {
 		constructor: function () {
 			CoreService.call(this);
 		},

@@ -3,7 +3,7 @@ sap.ui.define([
 	"./Chip"
 ], function (ManagedObect, Chip) {
 	"use strict";
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.model.Page', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.model.Page', {
 		metadata: {
 			properties: {
 				instanceId: "string",
@@ -26,7 +26,7 @@ sap.ui.define([
 			},
 			aggregations: {
 				chips: {
-					type: 'be.elia.fio.FioriAdmin.model.Chip',
+					type: 'be.wl.fio.FioriAdmin.model.Chip',
 					multiple: true
 				}
 			}

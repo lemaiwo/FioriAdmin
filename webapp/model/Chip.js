@@ -3,7 +3,7 @@ sap.ui.define([
 	"./TileType"
 ], function (ManagedObect, TileType) {
 	"use strict";
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.model.Chip', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.model.Chip', {
 		metadata: {
 			properties: {
 				isSelected: {
@@ -18,7 +18,7 @@ sap.ui.define([
 				semanticAction: "string",
 				targetUrl: "string",
 				icon: "string",
-				tileType: "be.elia.fio.FioriAdmin.model.TileType",
+				tileType: "be.wl.fio.FioriAdmin.model.TileType",
 				displayInfoText: "string",
 				displayTitleText: "string",
 				navigationProvider: "string",
@@ -40,11 +40,11 @@ sap.ui.define([
 			},
 			aggregations: {
 				catalogs: {
-					type: 'be.elia.fio.FioriAdmin.model.Page',
+					type: 'be.wl.fio.FioriAdmin.model.Page',
 					multiple: true
 				},
 				groups: {
-					type: 'be.elia.fio.FioriAdmin.model.Page',
+					type: 'be.wl.fio.FioriAdmin.model.Page',
 					multiple: true
 				}
 			}

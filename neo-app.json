@@ -1,33 +1,29 @@
 {
-  "welcomeFile": "/webapp/index.html",
-  "routes": [
-    {
-      "path": "/resources",
-      "target": {
-        "type": "service",
-        "name": "sapui5",
-        "entryPath": "/resources"
-      },
-      "description": "SAPUI5 Resources"
-    },
-    {
-      "path": "/test-resources",
-      "target": {
-        "type": "service",
-        "name": "sapui5",
-        "entryPath": "/test-resources"
-      },
-      "description": "SAPUI5 Test Resources"
-    },
-    {
-      "path": "/sap/opu/odata",
-      "target": {
-        "type": "destination",
-        "name": "G2D",
-        "entryPath": "/sap/opu/odata"
-      },
-      "description": "G2D"
-    }
-  ],
-  "sendWelcomeFileRedirect": true
+	"welcomeFile": "/webapp/index.html",
+	"routes": [{
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/sap/opu/odata",
+		"target": {
+			"type": "destination",
+			"name": "BACKEND",
+			"entryPath": "/sap/opu/odata"
+		},
+		"description": "BACKEND"
+	}],
+	"sendWelcomeFileRedirect": true
 }

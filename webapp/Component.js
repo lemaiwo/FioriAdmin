@@ -1,13 +1,13 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"be/elia/fio/FioriAdmin/model/models",
+	"be/wl/fio/FioriAdmin/model/models",
 	"./state/AdminState",
 	"./service/CatalogService"
 ], function (UIComponent, Device, models, AdminState, CatalogService) {
 	"use strict";
 
-	return UIComponent.extend("be.elia.fio.FioriAdmin.Component", {
+	return UIComponent.extend("be.wl.fio.FioriAdmin.Component", {
 
 		metadata: {
 			manifest: "json"

@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"be/elia/fio/FioriAdmin/test/integration/AllJourneys"
+		"be/wl/fio/FioriAdmin/test/integration/AllJourneys"
 	], function () {
 		QUnit.start();
 	});

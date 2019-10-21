@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel) {
 	"use strict";
 
-	return BaseController.extend("be.elia.fio.FioriAdmin.controller.dialog.WhereUsed", {
+	return BaseController.extend("be.wl.fio.FioriAdmin.controller.dialog.WhereUsed", {
 		onBeforeShow: function (parent, fragment, callback, data) {
 			this.parent = parent;
 			this.fragment = fragment;

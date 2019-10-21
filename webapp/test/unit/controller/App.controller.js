@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"be/elia/fio/FioriAdmin/controller/App.controller"
+	"be/wl/fio/FioriAdmin/controller/App.controller"
 ], function (oController) {
 	"use strict";
 

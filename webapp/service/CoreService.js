@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Object) {
 	"use strict";
 
-	return Object.extend("be.elia.fio.FioriAdmin.service.CoreService", {
+	return Object.extend("be.wl.fio.FioriAdmin.service.CoreService", {
 		constructor: function (model) {
 			Object.call(this);
 			if (model) {

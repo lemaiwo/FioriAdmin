@@ -1,7 +1,7 @@
 {
 	"_version": "1.8.0",
 	"sap.app": {
-		"id": "be.elia.fio.FioriAdmin",
+		"id": "be.wl.fio.FioriAdmin",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "be.elia.fio.FioriAdmin.view.App",
+			"viewName": "be.wl.fio.FioriAdmin.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -65,7 +65,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "be.elia.fio.FioriAdmin.i18n.i18n"
+					"bundleName": "be.wl.fio.FioriAdmin.i18n.i18n"
 				}
 			},
 			"builder": {
@@ -91,7 +91,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "be.elia.fio.FioriAdmin.view",
+				"viewPath": "be.wl.fio.FioriAdmin.view",
 				"controlAggregation": "pages",
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
@@ -110,7 +110,7 @@
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
-					"viewPath": "be.elia.fio.FioriAdmin.view.admin",
+					"viewPath": "be.wl.fio.FioriAdmin.view.admin",
 					"viewName": "CatalogOverview"
 				}
 			}

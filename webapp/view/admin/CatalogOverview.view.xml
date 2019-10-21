@@ -1,4 +1,4 @@
-<mvc:View controllerName="be.elia.fio.FioriAdmin.controller.admin.CatalogOverview" xmlns:html="http://www.w3.org/1999/xhtml"
+<mvc:View controllerName="be.wl.fio.FioriAdmin.controller.admin.CatalogOverview" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:t="sap.ui.table">
 	<Page title="Fiori Admin" class="sapUiContentPadding">
 		<headerContent></headerContent>

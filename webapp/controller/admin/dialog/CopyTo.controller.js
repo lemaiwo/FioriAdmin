@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel) {
 	"use strict";
 
-	return BaseController.extend("be.elia.fio.FioriAdmin.controller.dialog.CopyTo", {
+	return BaseController.extend("be.wl.fio.FioriAdmin.controller.dialog.CopyTo", {
 		onBeforeShow: function (parent, fragment, callback, data) {
 			this.parent = parent;
 			this.fragment = fragment;
@@ -18,14 +18,14 @@ sap.ui.define([
 			this.callback.call(this.parent);
 		},
 		handleCatalogValueHelp: function (oEvent) {
-			this.parent.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CatalogValuehelp", false, false, function (sDescription) {
+			this.parent.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CatalogValuehelp", false, false, function (sDescription) {
 				this.AdminState.setCopyToCatalog(sDescription);
 			}, {
 				search: oEvent.getSource().getValue()
 			});
 		},
 		handleGroupValueHelp: function (oEvent) {
-			this.parent.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.GroupValuehelp", false, false, function (sDescription) {
+			this.parent.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.GroupValuehelp", false, false, function (sDescription) {
 				this.AdminState.setAssignToGroup(sDescription);
 			}, {
 				search: oEvent.getSource().getValue()

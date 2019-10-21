@@ -3,7 +3,7 @@ sap.ui.define([
 	"./TileType"
 ], function (ManagedObect, TileType) {
 	"use strict";
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.model.Tile', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.model.Tile', {
 		metadata: {
 			properties: {
 				tileId: "string",
@@ -13,7 +13,7 @@ sap.ui.define([
 				semanticAction: "string",
 				target_url: "string",
 				icon: "string",
-				tileType: "be.elia.fio.FioriAdmin.model.TileType"
+				tileType: "be.wl.fio.FioriAdmin.model.TileType"
 			}
 		},
 		setChipAsTileType: function (oChip) {

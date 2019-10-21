@@ -5,7 +5,7 @@ sap.ui.define([
 	"sap/ui/core/routing/History"
 ], function (Controller, History) {
 	"use strict";
-	return Controller.extend("be.elia.fio.FioriAdmin.controller.BaseController", {
+	return Controller.extend("be.wl.fio.FioriAdmin.controller.BaseController", {
 		/**
 		 * Convenience method for accessing the router in every controller of the application.
 		 * @public

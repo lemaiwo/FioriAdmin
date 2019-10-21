@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/base/ManagedObject"
 ], function (ManagedObect) {
 	"use strict";
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.model.TileType', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.model.TileType', {
 		metadata: {
 			properties: {
 				tileTypeId: "string",

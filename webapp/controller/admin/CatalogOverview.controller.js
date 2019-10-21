@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, MessageToast, capitalize) {
 	"use strict";
 
-	return Controller.extend("be.elia.fio.FioriAdmin.controller.admin.CatalogOverview", {
+	return Controller.extend("be.wl.fio.FioriAdmin.controller.admin.CatalogOverview", {
 		onInit: function () {
 			this.AdminState = this.getOwnerComponent().getState(this.getOwnerComponent().ADMIN);
 			this.getView().setModel(this.AdminState.getModel(), "admin");
@@ -29,14 +29,14 @@ sap.ui.define([
 			this.AdminState.getPage().setSelectForAllChips(false);
 		},
 		handleCatalogValueHelp: function (oEvent) {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CatalogValuehelp", false, false, function (sDescription) {
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CatalogValuehelp", false, false, function (sDescription) {
 				this.AdminState.setCatalogName(sDescription);
 			}, {
 				search: oEvent.getSource().getValue()
 			});
 		},
 		handleGroupValueHelp: function (oEvent) {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.GroupValuehelp", false, false, function (sDescription) {
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.GroupValuehelp", false, false, function (sDescription) {
 				this.AdminState.setGroupName(sDescription);
 			}, {
 				search: oEvent.getSource().getValue()
@@ -47,12 +47,12 @@ sap.ui.define([
 				MessageToast.show("You can only assign tiles!");
 				return false;
 			}
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CopyTo", false, false, this.onAssign, {
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CopyTo", false, false, this.onAssign, {
 				type: "GROUP"
 			});
 		},
 		onAssign: function () {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CopyProgress");
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CopyProgress");
 			this.AdminState.assignToGroup().then(function () {
 				this.byId("table").clearSelection();
 				MessageToast.show("Finished assigning tiles to group!");
@@ -61,12 +61,12 @@ sap.ui.define([
 			}.bind(this));
 		},
 		onStartCopy: function (oEvent) {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CopyTo", false, false, this.onCopy, {
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CopyTo", false, false, this.onCopy, {
 				type: "CATALOG"
 			});
 		},
 		onCopy: function () {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CopyProgress");
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CopyProgress");
 			this.AdminState.createReference().then(function () {
 				this.byId("table").clearSelection();
 				MessageToast.show("Finished creating references!");
@@ -76,14 +76,14 @@ sap.ui.define([
 			this.AdminState.getWhereUsed().then(function () {
 				this.byId("table").clearSelection();
 			}.bind(this));
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.WhereUsed");
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.WhereUsed");
 		},
 		onDelete: function () {
-			this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.CopyProgress");
+			this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.CopyProgress");
 			this.AdminState.deleteChips().then(function () {
 				this.byId("table").clearSelection();
 			}.bind(this)).catch(function () {
-				this.openFragment("be.elia.fio.FioriAdmin.view.admin.dialog.WhereUsed");
+				this.openFragment("be.wl.fio.FioriAdmin.view.admin.dialog.WhereUsed");
 			}.bind(this));
 		}
 	});

@@ -9,7 +9,7 @@ sap.ui.define([
 ], function (ManagedObect, CatalogService, Page, Progress, TileType, ManagedObjectModel, capitalize) {
 	"use strict";
 
-	return ManagedObect.extend('be.elia.fio.FioriAdmin.state.AdminState', {
+	return ManagedObect.extend('be.wl.fio.FioriAdmin.state.AdminState', {
 		metadata: {
 			properties: {
 				pageType: {
@@ -19,7 +19,7 @@ sap.ui.define([
 				catalogName: 'string',
 				groupName: 'string',
 				page: {
-					type: 'be.elia.fio.FioriAdmin.model.Page'
+					type: 'be.wl.fio.FioriAdmin.model.Page'
 				},
 				copyToCatalog: 'string',
 				assignToGroup: 'string',
@@ -31,11 +31,11 @@ sap.ui.define([
 					defaultValue: false,
 					type: 'boolean'
 				},
-				progress: 'be.elia.fio.FioriAdmin.model.Progress'
+				progress: 'be.wl.fio.FioriAdmin.model.Progress'
 			},
 			aggregations: {
 				copyResult: {
-					type: 'be.elia.fio.FioriAdmin.model.Chip',
+					type: 'be.wl.fio.FioriAdmin.model.Chip',
 					multiple: true
 				}
 			},
